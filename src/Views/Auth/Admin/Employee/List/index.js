@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 import { useCookies } from "react-cookie";
 
+import CustomerCard from "../../../../../Components/Card/Customer";
 import Loading from "../../../../Loading";
 import AdminLayout from "../../../../Layouts/AdminLayout";
 
-import { TableLink } from "../../../../../Components/Table/TableLink";
-import { COLUMNS } from "./columns"
-
-export default function CustomerList() {
+export default function EmployeeList() {
   const [cookies] = useCookies(["csrf"]);
 
   const [customers, setCustomers] = useState([]);
@@ -29,6 +27,7 @@ export default function CustomerList() {
 
     return await fetch("/api/customer/list", requestOptions)
     .then((res) => {
+      setIsLoading(false);
       if (res.status !== 200) {
         return Promise.reject("Bad request sent to server!");
       }
@@ -36,7 +35,6 @@ export default function CustomerList() {
     })
     .then((json) => {
       setCustomers(json.customer_list);
-      setIsLoading(false);
     })
     .catch((err) => {
       console.log(err);
@@ -68,19 +66,16 @@ export default function CustomerList() {
     return fetchCustomerList();
   };
 
-  const actionLink = {
-    'detailLink': '/customer/detail/',
-    'updateLink': '/customer/update/',
-    'deleteLink': '/api/customer/delete/',
-    'handleDelete': handleDelete,
-  }
+  const customerCards = customers.map((customer, index) => (
+    <CustomerCard key={index} customer={customer} handleDelete={handleDelete}/>
+  ));
 
   if (isLoading) {
     return <Loading />;
   } else {
     return (
       <AdminLayout>
-        <TableLink columns={COLUMNS} data={customers} actionLink={actionLink}/>
+        <div>{customerCards}</div>
       </AdminLayout>
     );
   }
