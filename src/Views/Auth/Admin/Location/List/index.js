@@ -20,19 +20,26 @@ export default function LocationList() {
   const [disabledInput, setDisabledInput] = useState(false);
 
   useEffect(() => {
-    fetchCustomerList();
+    fetchLocationList();
   }, []);
 
-  const fetchCustomerList = async () => {
+  const fetchLocationList = async () => {
     setIsLoading(true);
     const requestOptions = {
       headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
         "X-CSRF-Token": cookies.csrf,
       },
+      mode: "cors",
       credentials: "include",
+      method: "GET",
     };
 
-    return await fetch("/api/delivery-location/list", requestOptions)
+    return await fetch(
+      process.env.REACT_APP_API_URL + "/api/delivery-location/list",
+      requestOptions
+    )
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -81,11 +88,13 @@ export default function LocationList() {
       headers: {
         "X-CSRF-Token": cookies.csrf,
       },
+      mode: "cors",
       credentials: "include",
       method: "DELETE",
     };
 
-    fetch('/api/delivery-location/delete/' + id, requestOptions)
+
+    fetch(process.env.REACT_APP_API_URL + "/api/delivery-location/delete/" + id, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -94,12 +103,11 @@ export default function LocationList() {
       })
       .then((data) => {
         console.log(data);
-        return fetchCustomerList();
+        return fetchLocationList();
       })
       .catch((err) => {
         console.log(err);
       });
-
   };
 
   const submitCreate = (locationModal) => {
@@ -109,12 +117,13 @@ export default function LocationList() {
         "Content-Type": "application/json",
         "X-CSRF-Token": cookies.csrf,
       },
+      mode: "cors",
       credentials: "include",
       method: "POST",
       body: JSON.stringify(locationModal),
     };
 
-    fetch('/api/delivery-location/create' , requestOptions)
+    fetch(process.env.REACT_APP_API_URL + "/api/delivery-location/create", requestOptions)
       .then((res) => {
         if (res.status !== 201) {
           return Promise.reject("Bad request sent to server!");
@@ -123,7 +132,7 @@ export default function LocationList() {
       })
       .then((data) => {
         console.log(data);
-        return fetchCustomerList();
+        return fetchLocationList();
       })
       .catch((err) => {
         console.log(err);
@@ -137,12 +146,13 @@ export default function LocationList() {
         "Content-Type": "application/json",
         "X-CSRF-Token": cookies.csrf,
       },
+      mode: "cors",
       credentials: "include",
       method: "PUT",
       body: JSON.stringify(locationModal),
     };
 
-    fetch('/api/delivery-location/update/' + locationModal.id, requestOptions)
+    fetch(process.env.REACT_APP_API_URL + "/api/delivery-location/update/" + locationModal.id, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -151,7 +161,7 @@ export default function LocationList() {
       })
       .then((data) => {
         console.log(data);
-        return fetchCustomerList();
+        return fetchLocationList();
       })
       .catch((err) => {
         console.log(err);
@@ -166,8 +176,8 @@ export default function LocationList() {
 
   const modalButton = {
     submitCreate: submitCreate,
-    submitUpdate: submitUpdate, 
-  }
+    submitUpdate: submitUpdate,
+  };
 
   if (isLoading) {
     return <Loading />;
@@ -176,7 +186,12 @@ export default function LocationList() {
       <AdminLayout>
         <div>
           <p className="location-list-header">Delivery location list</p>
-          <Button className="location-list-create-button" onClick={buttonCreate}>Create</Button>
+          <Button
+            className="location-list-create-button"
+            onClick={buttonCreate}
+          >
+            Create
+          </Button>
         </div>
         <TableModal
           columns={COLUMNS}
