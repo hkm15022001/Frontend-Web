@@ -50,9 +50,6 @@ export const LONGSHIPCOLUMNS = [
       )
     },
   },
-  {
-    Header: "Action",
-  },
 ];
 
 export const TRANSPORTTYPECOLUMNS = [
@@ -79,13 +76,23 @@ export const TRANSPORTTYPECOLUMNS = [
         accessor: "long_ship_duration",
         disableFilters: true,
         Cell: ({ value }) => {
-          let date = value / 86400
+          let date = Math.floor(value / 86400)
           return date + " day(s)";
         }
       },
       {
         Header: "Price",
         accessor: "long_ship_price",
+        disableFilters: true,
+      },
+    ]
+  },
+  {
+    Header: 'Short ship',
+    columns: [
+      {
+        Header: "Price / KM",
+        accessor: "short_ship_price_per_km",
         disableFilters: true,
       },
     ]
