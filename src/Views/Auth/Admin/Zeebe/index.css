@@ -1,0 +1,19 @@
+.longship-update-header {
+    text-align: center;
+    padding: 1rem;
+    font-size: 3rem;
+}
+
+.longship-update-header2 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.longship-update-button {
+    min-width: 150px;
+    margin-right: 1rem;
+    background-color: lightgreen !important;
+    font-size: 1.2rem !important;
+    outline: none;
+    line-height: 1rem !important;
+}

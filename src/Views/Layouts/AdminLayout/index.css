@@ -1,0 +1,10 @@
+.layout-container-parent {
+    min-height: 96vh;
+    background-color: aliceblue;
+    padding: 0.5rem 0rem;
+}
+
+.layout-container-child {
+    background-color: white;
+    padding: 1rem;
+}
