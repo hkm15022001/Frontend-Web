@@ -3,11 +3,13 @@ import "./index.css";
 import { Button, Form, Col, Row, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { useCookies } from "react-cookie";
-
 import AdminLayout from "../../../../Layouts/AdminLayout";
 import Loading from "../../../../Loading";
 
 import { LONGSHIPCOLUMNS, TRANSPORTTYPECOLUMNS } from "./columns";
+import AutoCompleteState from "./autoComplete_State";
+import AutoCompleteStreet from "./autoComplete_Street";
+
 import { TableSelect } from "../../../../../Components/Table/TableSelect";
 
 export default function OrderCreate() {
@@ -17,9 +19,9 @@ export default function OrderCreate() {
   const [isLoading, setIsLoading] = useState(true);
   const [transportTypes, setTransportTypes] = useState([]);
   const [longShips, setLongShips] = useState([]);
-
+  // const [receive_address, setReceiveAddress] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");  
+  const [errorMessage, setErrorMessage] = useState("");
   const clearNotify = () => {
     setSuccessMessage("");
     setErrorMessage("")
@@ -74,6 +76,7 @@ export default function OrderCreate() {
     type: "Normal",
     customer_send_id: 1,
     customer_receive_id: 0,
+    receiver_address: "",
     sender: "Customer one - 231-233 Le Hong Phong - 6578678678",
     receiver: "Customer two - 12 Bich Hoa - 6578678333",
     transport_type_id: 0,
@@ -81,11 +84,13 @@ export default function OrderCreate() {
     note: "Can than hang de vo",
     use_long_ship: true,
     long_ship_id: 0,
-    short_ship_distance: 20,
+    // short_ship_distance: 20,
+    long_ship_distance: 0
   });
   const weight = state.weight;
   const volume = state.volume;
   const type = state.type;
+  // const receive_address = state.receive_address;
   const customer_send_id = state.customer_send_id;
   const customer_receive_id = state.customer_receive_id;
   const sender = state.sender;
@@ -94,21 +99,38 @@ export default function OrderCreate() {
   const detail = state.detail;
   const note = state.note;
   const long_ship_id = state.long_ship_id;
-  const short_ship_distance = state.short_ship_distance;
+  // const long_ship_distance = state.long_ship_distance;
 
   const handleChange = (event) => {
     const { name, value, valueAsNumber } = event.target;
+    console.log(event.target)
     setState((prevState) => {
       return { ...prevState, [name]: valueAsNumber || value };
     });
-  };
 
+  };
+  const [selectedReceiverAddress, setSelectedReceiverAddress] = useState("");
+  const [longShipDistance, setLongShipDistance] = useState(0);
+
+  const handleAddressSelect = (address) => {
+    setSelectedReceiverAddress(address.city);
+    setLongShipDistance(address.ship_distance)
+    setState((prevState) => {
+      return { ...prevState, receiver_address : address.city, long_ship_distance : address.ship_distance };
+    });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (long_ship_id === 0) {
-      setErrorMessage("Please select the long ship in the below table")
+    if (long_ship_id === 0 && transport_type_id === 0) {
+      setErrorMessage("Please select the long ship or transport type in the below table")
       return
     }
+
+    if (selectedReceiverAddress === "") {
+      setErrorMessage("Please fill receive address")
+      return
+    }
+
     clearNotify()
 
     const requestOptions = {
@@ -153,7 +175,14 @@ export default function OrderCreate() {
   };
 
   const actionLink2 = {
-    handleSelectItem: (e) => { console.log(e) },
+    handleSelectItem: (e) => {
+      setState((prevState) => {
+        return {
+          ...prevState,
+          transport_type_id: e.id,
+        };
+      });
+    },
   };
 
   const handlePaymentStep1 = async () => {
@@ -270,7 +299,7 @@ export default function OrderCreate() {
           <Form.Group as={Row} controlId="formHorizon4taflsAess">
             <Form.Label column sm={2}>
               Volume
-          </Form.Label>
+            </Form.Label>
             <Col sm={10}>
               <Form.Control
                 type="number"
@@ -286,7 +315,7 @@ export default function OrderCreate() {
           <Form.Group as={Row} controlId="formHoriz4on55taflsAess">
             <Form.Label column sm={2}>
               Type
-          </Form.Label>
+            </Form.Label>
             <Col sm={10}>
               <Form.Control
                 type="text"
@@ -302,7 +331,7 @@ export default function OrderCreate() {
           <Form.Group as={Row} controlId="formHof2riasflsAess">
             <Form.Label column sm={2}>
               Detail
-          </Form.Label>
+            </Form.Label>
             <Col sm={10}>
               <Form.Control
                 type="text"
@@ -318,7 +347,7 @@ export default function OrderCreate() {
           <Form.Group as={Row} controlId="formHoriaf2sflsAess">
             <Form.Label column sm={2}>
               Note
-          </Form.Label>
+            </Form.Label>
             <Col sm={10}>
               <Form.Control
                 type="text"
@@ -335,7 +364,7 @@ export default function OrderCreate() {
           <Form.Group as={Row} controlId="formHoriz42on5v5taflsAess">
             <Form.Label column sm={2}>
               Customer send id
-          </Form.Label>
+            </Form.Label>
             <Col sm={10}>
               <Form.Control
                 type="number"
@@ -351,7 +380,7 @@ export default function OrderCreate() {
           <Form.Group as={Row} controlId="formHorizon5552tasflsAess">
             <Form.Label column sm={2}>
               Customer receive id
-          </Form.Label>
+            </Form.Label>
             <Col sm={10}>
               <Form.Control
                 type="number"
@@ -383,7 +412,7 @@ export default function OrderCreate() {
           <Form.Group as={Row} controlId="formHorizon55tas312flsAess">
             <Form.Label column sm={2}>
               Sender
-          </Form.Label>
+            </Form.Label>
             <Col sm={10}>
               <Form.Control
                 type="text"
@@ -399,7 +428,7 @@ export default function OrderCreate() {
           <Form.Group as={Row} controlId="formHorizon55tasfls23Aess">
             <Form.Label column sm={2}>
               Receiver
-          </Form.Label>
+            </Form.Label>
             <Col sm={10}>
               <Form.Control
                 type="text"
@@ -412,26 +441,43 @@ export default function OrderCreate() {
             </Col>
           </Form.Group>
 
+          <hr />
+          <Form.Group as={Row} controlId="formHorizontalAddress1">
+            <Form.Label column sm={2}>
+              Receiver's Street Address
+            </Form.Label>
+            <Col sm={10}>
+              <AutoCompleteStreet/>
+            </Col>
+          </Form.Group>
+
+          <Form.Group as={Row} controlId="formHorizontalAddress2">
+            <Form.Label column sm={2}>
+              Receiver's City/Province Address
+            </Form.Label>
+            <Col sm={10}>
+              <AutoCompleteState onSelect={handleAddressSelect}/>
+            </Col>
+          </Form.Group>
+
           <Form.Group as={Row} controlId="formHoriddzontalsAddress">
             <Form.Label column sm={2}>
-              Short ship distance
+              Ship distance (Km)
             </Form.Label>
             <Col sm={10}>
               <Form.Control
                 type="number"
-                name="short_ship_distance"
-                placeholder="short_ship_distance"
-                value={short_ship_distance}
-                onChange={handleChange}
-                required
+                name="ship_distance"
+                placeholder="ship_distance"
+                value={longShipDistance}
+                disabled={true} 
               />
             </Col>
           </Form.Group>
-
           <hr />
 
-          {successMessage !== "" ? ( <Alert key={3} variant="success">Server response: {successMessage}</Alert>) : (<></>)}
-          {errorMessage !== "" ? ( <Alert key={3} variant="danger">Server response: {errorMessage}</Alert>) : (<></>)}
+          {successMessage !== "" ? (<Alert key={3} variant="success">Server response: {successMessage}</Alert>) : (<></>)}
+          {errorMessage !== "" ? (<Alert key={3} variant="danger">Server response: {errorMessage}</Alert>) : (<></>)}
 
           <Form.Group as={Row} controlId="formHorizoantgswf2al4aeq">
             <Form.Label column sm={2}>Total price</Form.Label>
@@ -489,7 +535,7 @@ export default function OrderCreate() {
           <Col md={6}>
             <Button className="order-create-button" onClick={() => handlePaymentStep2("cash")}>
               Use Cash
-          </Button>
+            </Button>
           </Col>
         </Form.Group>
         {hideCreditButton ? (<></>) : (
@@ -506,7 +552,7 @@ export default function OrderCreate() {
         )}
       </AdminLayout>
     )
-  } else if (paymentConfirmed === false){
+  } else if (paymentConfirmed === false) {
     return (
       <AdminLayout>
         <p className="order-create-header-1">Please click this button with your carefulness!</p>
@@ -520,14 +566,14 @@ export default function OrderCreate() {
   } else {
     return (
       <AdminLayout>
-      <p className="order-create-header-1">New order has been created and its payment has been processed!</p>
-      <div className="order-create-align-center">
-        <Button className="order-create-button-confirmed" onClick={() => history.push("/order/list")}>
-          Order list
-        </Button>
-      </div>
-    </AdminLayout>
+        <p className="order-create-header-1">New order has been created and its payment has been processed!</p>
+        <div className="order-create-align-center">
+          <Button className="order-create-button-confirmed" onClick={() => history.push("/order/list")}>
+            Order list
+          </Button>
+        </div>
+      </AdminLayout>
     )
-   
+
   }
 }

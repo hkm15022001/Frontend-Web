@@ -42,12 +42,12 @@ export const COLUMNS = [
         disableFilters: true,
       },
       {
-        Header: "Duration",
-        accessor: "long_ship_duration",
+        Header: "ServiceType",
+        accessor: "service_type",
         disableFilters: true,
       },
       {
-        Header: "Price",
+        Header: "Price/Km",
         accessor: "long_ship_price",
         disableFilters: true,
       },
@@ -57,7 +57,7 @@ export const COLUMNS = [
     Header: 'Short ship info',
     columns: [
       {
-        Header: "Price per Km",
+        Header: "Price/Km",
         accessor: "short_ship_price_per_km",
         disableFilters: true,
       },

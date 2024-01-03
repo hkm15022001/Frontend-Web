@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-# React App - Supply Chain Event Management 
-=======
+
 # Getting Started with Create React App
->>>>>>> 58a30e5ef9ff4f0edec19db3f39b72cb092dcdb9
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

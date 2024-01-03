@@ -27,6 +27,7 @@ export default function TransportTypeDetail() {
     transport_type_id: 0,
     detail: "",
     note: "",
+    receive_address:"",
     total_price: 0,
     use_long_ship: false,
     long_ship_id: 0,
@@ -40,6 +41,7 @@ export default function TransportTypeDetail() {
   const customer_send_id = state.customer_send_id;
   const customer_receive_id = state.customer_receive_id;
   const sender = state.sender;
+  const receiver_address = state.receiver_address;
   const receiver = state.receiver;
   const transport_type_id = state.transport_type_id;
   const detail = state.detail;
@@ -149,6 +151,13 @@ export default function TransportTypeDetail() {
             <Form.Label column sm={2}>Receiver</Form.Label>
             <Col sm={10}>
               <Form.Control type="text" value={receiver} disabled={true} />
+            </Col>
+          </Form.Group>
+
+          <Form.Group as={Row} controlId="formHorigzontalfg4aq">
+            <Form.Label column sm={2}>Receiver's Address</Form.Label>
+            <Col sm={10}>
+              <Form.Control type="text" value={receiver_address} disabled={true} />
             </Col>
           </Form.Group>
 

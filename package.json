@@ -7,6 +7,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.13",
+    "@geoapify/geocoder-autocomplete": "^2.0.1",
+    "@geoapify/react-geocoder-autocomplete": "^2.0.0",
     "bootstrap": "^4.5.3",
     "bs-custom-file-input": "^1.3.4",
     "chart.js": "^2.9.4",
@@ -37,18 +39,10 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {},
+  "browserslist": [
+    ">0.2%",
+   "not dead",
+   "not op_mini all"
+  ],
   "proxy": "http://127.0.0.1:5000"
 }

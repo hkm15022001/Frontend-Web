@@ -22,8 +22,9 @@ export default function TransportTypeCreate() {
     same_city: true,
     location_one: "",
     location_two: "",
-    bus_station_from: "",
-    bus_station_to: "",
+    // bus_station_from: "",
+    // bus_station_to: "",
+    service_type: "",
     long_ship_duration: 0,
     long_ship_price: 0,
     short_ship_price_per_km: 0,
@@ -31,8 +32,9 @@ export default function TransportTypeCreate() {
   const same_city = state.same_city;
   const location_one = state.location_one;
   const location_two = state.location_two;
-  const bus_station_from = state.bus_station_from;
-  const bus_station_to = state.bus_station_to;
+  // const bus_station_from = state.bus_station_from;
+  // const bus_station_to = state.bus_station_to;
+  const service_type = state.service_type;
   const long_ship_duration = state.long_ship_duration;
   const long_ship_price = state.long_ship_price;
   const short_ship_price_per_km = state.short_ship_price_per_km;
@@ -47,8 +49,9 @@ export default function TransportTypeCreate() {
           return {
             ...prevState,
             location_two: "",
-            bus_station_from: "",
-            bus_station_to: "",
+            // bus_station_from: "",
+            // bus_station_to: "",
+            service_type: "0",
             long_ship_duration: 0,
             long_ship_price: 0,
             [name]: true
@@ -114,37 +117,25 @@ export default function TransportTypeCreate() {
             />
           </Col>
         </Form.Group>
-        <Form.Group as={Row} controlId="formHorizontalBusStationFrom">
-          <Form.Label column sm={2}>
-            Bus station from
-          </Form.Label>
-          <Col sm={10}>
-            <Form.Control
-              type="text"
-              name="bus_station_from"
-              placeholder="Bus station from"
-              value={bus_station_from}
-              onChange={handleChange}
-              required
-            />
-          </Col>
-        </Form.Group>
-
-        <Form.Group as={Row} controlId="formHorizontalBusStationTo">
-          <Form.Label column sm={2}>
-            Bus station to
-          </Form.Label>
-          <Col sm={10}>
-            <Form.Control
-              type="text"
-              name="bus_station_to"
-              placeholder="Bus station to"
-              value={bus_station_to}
-              onChange={handleChange}
-              required
-            />
-          </Col>
-        </Form.Group>
+        <Form.Group as={Row} controlId="formHorizontalServiceType">
+            <Form.Label column sm={2}>
+              Serivce Type
+            </Form.Label>
+            <Col sm={10}>
+              <Form.Control
+                as="select"  // Thay đổi thành trường chọn
+                name="service_type"
+                value={service_type}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Service Type</option>
+                <option value="Normal">Normal</option>
+                <option value="Express">Express</option>
+                {/* Thêm các tùy chọn khác theo nhu cầu */}
+              </Form.Control>
+            </Col>
+          </Form.Group>
 
         <Form.Group as={Row} controlId="formHorizontalLongShipDuration">
           <Form.Label column sm={2}>
@@ -175,7 +166,7 @@ export default function TransportTypeCreate() {
               value={long_ship_price}
               onChange={handleChange}
               required
-              min="100000"
+              min="1000"
             />
           </Col>
         </Form.Group>

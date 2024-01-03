@@ -27,6 +27,11 @@ export const TRANSPORTTYPECOLUMNS = [
         }
       },
       {
+        Header: "ServiceType",
+        accessor: "service_type",
+        disableFilters: true,
+      } ,
+      {
         Header: "Price",
         accessor: "long_ship_price",
         disableFilters: true,
