@@ -36,7 +36,7 @@ const calculateDistance = (lat1, lon1, lat2, lon2) => {
     const city = value.properties.city !== undefined ? value.properties.city : value.properties.rank.state !== undefined ?  value.properties.rank.state : value.properties.address_line1;
     console.log(parseInt(distance), city)
     onSelect({
-      city: city,
+      city: city.replace(/tỉnh|thành phố|/gi,"").trim(),
       ship_distance: parseInt(distance), // Rounded distance to 2 decimal places
     });
   }

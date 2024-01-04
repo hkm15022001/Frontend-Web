@@ -5,3 +5,49 @@
 .location-modal-align-center .btn {
     margin: 0rem 1rem;
 }
+/* index.css */
+/* Modal styles */
+.ReactModal__Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Thêm một lớp mờ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ReactModal__Content {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+  }
+  
+  /* Bản đồ styles */
+  #map {
+    width: 100%;
+    height: 300px; /* Điều chỉnh chiều cao của bản đồ */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .autocomplete-panel {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 400px;
+    z-index: 1000;
+  }
+  
+  .autocomplete-container {
+    position: relative;
+  }

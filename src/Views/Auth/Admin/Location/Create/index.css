@@ -1,0 +1,29 @@
+/* MapComponent.css */
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust the height as needed */
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.autocomplete-panel {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 400px;
+  z-index: 1000;
+}
+
+.autocomplete-container {
+  position: relative;
+}
+.location-create-header{
+  text-align: center;
+  padding: 1rem;
+  font-size: 3rem;
+}

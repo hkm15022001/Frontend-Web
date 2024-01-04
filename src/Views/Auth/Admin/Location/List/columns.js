@@ -9,8 +9,12 @@ export const COLUMNS = [
     accessor: "city",
   },
   {
-    Header: "District",
-    accessor: "district",
+    Header: "Latitude",
+    accessor: "latitude",
+  },
+  {
+    Header: "Longitude",
+    accessor: "longitude",
   },
   {
     Header: "Action",

@@ -4,6 +4,8 @@ import { Button, Form, Col, Row } from "react-bootstrap";
 import Modal from "react-modal";
 
 Modal.setAppElement("#root");
+
+
 export default function LocationModal(props) {
   const [state, setState] = useState({
     id: 0,
@@ -97,8 +99,8 @@ export default function LocationModal(props) {
           },
           content: {
             position: "absolute",
-            width: "600px",
-            height: "260px",
+            width: "800px",
+            height: "400px",
             top: "30%",
             margin: "0 auto",
             border: "1px solid #ccc",

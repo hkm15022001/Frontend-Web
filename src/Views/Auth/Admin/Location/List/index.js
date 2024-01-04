@@ -3,13 +3,14 @@ import "./index.css";
 import { useCookies } from "react-cookie";
 import Loading from "../../../../Loading";
 import AdminLayout from "../../../../Layouts/AdminLayout";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import { TableModal } from "../../../../../Components/Table/TableModal";
 import { COLUMNS } from "./columns";
 
 import LocationModal from "../../../../../Components/Modal/Location";
-
+import MapComponent from "./Map.js"
 export default function LocationList() {
   const [cookies] = useCookies(["csrf"]);
 
@@ -18,7 +19,6 @@ export default function LocationList() {
   const [isLoading, setIsLoading] = useState(true);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [disabledInput, setDisabledInput] = useState(false);
-
   useEffect(() => {
     fetchLocationList();
     // eslint-disable-next-line
@@ -32,12 +32,12 @@ export default function LocationList() {
         Accept: "application/json",
         "X-CSRF-Token": cookies.csrf,
       },
-      
+
       credentials: "include",
       method: "GET",
     };
 
-    return await fetch( "/api/delivery-location/list", requestOptions
+    return await fetch("/api/delivery-location/list", requestOptions
     )
       .then((res) => {
         if (res.status !== 200) {
@@ -54,11 +54,11 @@ export default function LocationList() {
       });
   };
 
-  const buttonCreate = (id) => {
-    setDisabledInput(false);
-    setModalIsOpen(true);
-    setLocation(undefined);
-  };
+  // const buttonCreate = (id) => {
+  //   setDisabledInput(false);
+  //   setModalIsOpen(true);
+  //   setLocation(undefined);
+  // };
 
   const buttonDetail = (id) => {
     setDisabledInput(true);
@@ -87,7 +87,7 @@ export default function LocationList() {
       headers: {
         "X-CSRF-Token": cookies.csrf,
       },
-      
+
       credentials: "include",
       method: "DELETE",
     };
@@ -116,7 +116,7 @@ export default function LocationList() {
         "Content-Type": "application/json",
         "X-CSRF-Token": cookies.csrf,
       },
-      
+
       credentials: "include",
       method: "POST",
       body: JSON.stringify(locationModal),
@@ -145,7 +145,7 @@ export default function LocationList() {
         "Content-Type": "application/json",
         "X-CSRF-Token": cookies.csrf,
       },
-      
+
       credentials: "include",
       method: "PUT",
       body: JSON.stringify(locationModal),
@@ -185,13 +185,11 @@ export default function LocationList() {
       <AdminLayout>
         <div>
           <p className="location-list-header">Delivery location list</p>
-          <Button
-            className="location-list-create-button"
-            onClick={buttonCreate}
-          >
-            Create
-          </Button>
         </div>
+        <div>
+          <MapComponent data={locations} />
+        </div>
+        <div style={{margin:"20px"}}><Link to={'/delivery-location/create'} className="btn location-list-create-button">Create</Link></div>
         <TableModal
           columns={COLUMNS}
           data={locations}

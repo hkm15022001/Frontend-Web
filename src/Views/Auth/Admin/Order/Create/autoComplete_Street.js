@@ -13,7 +13,7 @@ const AutoCompleteStreet = () => {
     <GeoapifyContext apiKey="4d44a4f90c0b40dd9fcf8673380e8f44">
       <GeoapifyGeocoderAutocomplete
         placeholder="Enter address here"
-        type="locality"
+        type="street"
         lang="vi"
         countryCodes="vn"
         limit="5"

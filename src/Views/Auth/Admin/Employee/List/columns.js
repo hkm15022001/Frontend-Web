@@ -44,10 +44,10 @@ export const COLUMNS = [
         Header: "City",
         accessor: "delivery_location_city",
       },
-      {
-        Header: "District",
-        accessor: "delivery_location_district",
-      },
+      // {
+      //   Header: "District",
+      //   accessor: "delivery_location_district",
+      // },
     ]
   },
   {

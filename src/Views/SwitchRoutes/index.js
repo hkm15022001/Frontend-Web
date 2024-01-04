@@ -17,6 +17,7 @@ import CustomerUpdate from '../Auth/Admin/Customer/Update';
 import CustomerCreditList from '../Auth/Admin/CustomerCredit/List';
 
 import LocationList from '../Auth/Admin/Location/List';
+import LocationCreate from '../Auth/Admin/Location/Create';
 import EmployeeType from '../Auth/Admin/EmployeeType/List';
 
 import EmployeeList from '../Auth/Admin/Employee/List';
@@ -67,6 +68,7 @@ export default function App() {
         <Route exact path="/customer/update/:id" component={CustomerUpdate} />
         <Route exact path="/customer-credit/list" component={CustomerCreditList} />
         <Route exact path="/delivery-location/list" component={LocationList} />
+        <Route exact path="/delivery-location/create" component={LocationCreate} />
         <Route exact path="/employee-type/list" component={EmployeeType} />
         <Route exact path="/employee/list" component={EmployeeList} />
         <Route exact path="/employee/detail/:id" component={EmployeeDetail} />
