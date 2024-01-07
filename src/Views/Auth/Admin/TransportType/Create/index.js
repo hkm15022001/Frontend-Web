@@ -107,14 +107,21 @@ export default function TransportTypeCreate() {
             Location two
           </Form.Label>
           <Col sm={10}>
-            <Form.Control
-              type="text"
-              name="location_two"
-              placeholder="Location two"
-              value={location_two}
-              onChange={handleChange}
-              required
-            />
+          <Form.Control
+                as="select"  // Thay đổi thành trường chọn
+                name="location_two"
+                value={location_two}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Region</option>
+                <option value="Bắc Bộ">Bắc Bộ</option>
+                <option value="Trung Bộ">Trung Bộ</option>
+                <option value="Tây Nguyên">Tây Nguyên</option>
+                <option value="Nam Bộ">Nam Bộ</option>
+                <option value="Đồng Bằng Sông Cửu Long">Đồng Bằng Sông Cửu Long</option>
+                {/* Thêm các tùy chọn khác theo nhu cầu */}
+              </Form.Control>
           </Col>
         </Form.Group>
         <Form.Group as={Row} controlId="formHorizontalServiceType">
@@ -137,7 +144,7 @@ export default function TransportTypeCreate() {
             </Col>
           </Form.Group>
 
-        <Form.Group as={Row} controlId="formHorizontalLongShipDuration">
+        {/* <Form.Group as={Row} controlId="formHorizontalLongShipDuration">
           <Form.Label column sm={2}>
             Long ship duration
           </Form.Label>
@@ -152,17 +159,17 @@ export default function TransportTypeCreate() {
               min="86400"
             />
           </Col>
-        </Form.Group>
+        </Form.Group> */}
 
         <Form.Group as={Row} controlId="formHorizontalLongShipPrice">
           <Form.Label column sm={2}>
-            Long ship price
+            Long ship price per km
           </Form.Label>
           <Col sm={10}>
             <Form.Control
               type="number"
               name="long_ship_price"
-              placeholder="Long ship price"
+              placeholder="Long ship price per km"
               value={long_ship_price}
               onChange={handleChange}
               required

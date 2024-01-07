@@ -27,10 +27,10 @@ export default function LongShipCreate() {
 
   const [state, setState] = useState({
     transport_type_id: 0,
-    transport_type_duration: 0,
+    // transport_type_duration: 0,
     license_plate: "51A-12345",
     estimated_time_of_departure: Math.floor(new Date().getTime()/1000),
-    estimated_time_of_arrival:  Math.floor(new Date().getTime()/1000),
+    // estimated_time_of_arrival:  Math.floor(new Date().getTime()/1000),
   });
 
   useEffect(() => {
@@ -39,10 +39,10 @@ export default function LongShipCreate() {
   }, [])
 
   const transport_type_id = state.transport_type_id;
-  const transport_type_duration = state.transport_type_duration;
+  // const transport_type_duration = state.transport_type_duration;
   const license_plate = state.license_plate;
   const estimated_time_of_departure = state.estimated_time_of_departure;
-  const estimated_time_of_arrival = state.estimated_time_of_arrival;
+  // const estimated_time_of_arrival = state.estimated_time_of_arrival;
 
   const fetchCreateFormData = async () => {
     setIsLoading(true);
@@ -86,7 +86,7 @@ export default function LongShipCreate() {
       setState((prevState) => {
         return { ...prevState, 
           estimated_time_of_departure: timestamp,
-          estimated_time_of_arrival: timestamp + prevState.transport_type_duration,
+          // estimated_time_of_arrival: timestamp + prevState.transport_type_duration,
         }
         ;
       });
@@ -98,8 +98,8 @@ export default function LongShipCreate() {
         const startOfDayUnix = startOfDay / 1000;
         
         const newDeparture = startOfDayUnix + timestamp;
-        const newArrival = startOfDayUnix + timestamp + transport_type_duration;
-      return { ...prevState, estimated_time_of_departure: newDeparture, estimated_time_of_arrival: newArrival};
+        // const newArrival = startOfDayUnix + timestamp ;
+      return { ...prevState, estimated_time_of_departure: newDeparture, }; //estimated_time_of_arrival: newArrival
       });
     } else {
       setState((prevState) => {
@@ -151,7 +151,7 @@ export default function LongShipCreate() {
           ...prevState,
           transport_type_duration: e.long_ship_duration,
           transport_type_id: e.id,
-          estimated_time_of_arrival: prevState.estimated_time_of_departure + e.long_ship_duration,
+          // estimated_time_of_arrival: prevState.estimated_time_of_departure + e.long_ship_duration,
         };
       });
     },
@@ -198,7 +198,7 @@ export default function LongShipCreate() {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} controlId="formHorfizontal4">
+        {/* <Form.Group as={Row} controlId="formHorfizontal4">
           <Form.Label column sm={2}>
             Duration (days)
           </Form.Label>
@@ -212,7 +212,7 @@ export default function LongShipCreate() {
               disabled={true}
             />
           </Col>
-        </Form.Group>
+        </Form.Group> */}
 
         <Form.Group as={Row} controlId="formHorizodntal5">
           <Form.Label column sm={2}>
@@ -244,7 +244,7 @@ export default function LongShipCreate() {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} controlId="formHorizontal6">
+        {/* <Form.Group as={Row} controlId="formHorizontal6">
           <Form.Label column sm={2}>
             Arrival time 
           </Form.Label>
@@ -258,7 +258,7 @@ export default function LongShipCreate() {
               disabled={true}
             />
           </Col>
-        </Form.Group>
+        </Form.Group> */}
 
         <Form.Group as={Row}>
           <Col sm={{ span: 1, offset: 2 }}>

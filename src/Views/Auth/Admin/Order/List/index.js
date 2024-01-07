@@ -97,7 +97,10 @@ export default function OrderList() {
           <Link to={'/order/create'} className="btn transport-type-list-create-button">Create</Link>
         </div>
         <TableLink columns={COLUMNS} data={orders} actionLink={actionLink} />
-        <hr/>
+        <div>
+          <Link to={'/process'} className="btn transport-type-list-create-button">Process</Link>
+        </div>
+        <hr style={{ marginTop: '5rem' }}/>
         <div>
           <p className="order-list-header">Order payment list</p>
         </div>

@@ -15,3 +15,6 @@
     outline: none;
     line-height: 3rem !important;
 }
+hr {
+    margin-top: 5rem;
+}

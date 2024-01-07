@@ -38,6 +38,8 @@ import LongShipUpdate from '../Auth/Admin/LongShip/Update';
 import OrderList from '../Auth/Admin/Order/List';
 import OrderDetail from '../Auth/Admin/Order/Detail';
 import OrderCreate from '../Auth/Admin/Order/Create';
+import OrderProcessVRP from '../Auth/Admin/Order/OrderProcessVRP';
+
 
 import OrderShortShipList from '../Auth/Admin/OrderShortShip/List';
 import OrderShortShipUpdate from '../Auth/Admin/OrderShortShip/Update';
@@ -85,6 +87,7 @@ export default function App() {
         <Route exact path="/order/list" component={OrderList} />
         <Route exact path="/order/detail/:id" component={OrderDetail} />
         <Route exact path="/order/create" component={OrderCreate} />
+        <Route exact path="/process" component={OrderProcessVRP} />
         <Route exact path="/order-short-ship/list" component={OrderShortShipList} /> 
         <Route exact path="/order-short-ship/update/:id" component={OrderShortShipUpdate} /> 
         <Route exact path="/zeebe-api" component={Zeebe} />
