@@ -20,7 +20,7 @@ const OrderProcessVRP = () => {
       })
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
-  const colors = ['red', 'blue', 'green']
+  const colors = ['red', 'blue', 'green','yellow']
   return (
     <div>
       <h2>Total Distance: {totalDistance}</h2>
@@ -28,7 +28,7 @@ const OrderProcessVRP = () => {
       {truckPath.map((path, index) => (
         <div key={index}>
           {path.map((step, stepIndex) => (
-            <p key={stepIndex}>{step}</p>
+            <i key={stepIndex}>{step}|</i>
           ))}
         </div>
       ))}

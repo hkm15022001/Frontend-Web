@@ -19,7 +19,7 @@ export const LONGSHIPCOLUMNS = [
   {
     Header: "Departure time",
     accessor: "estimated_time_of_departure",
-    disableFilters: true,
+    disableFilters: false,
     Cell: ({ value }) => {
       console.log(value)
       return format(new Date(value * 1000), 'dd/MM/yy HH:mm:ss')
@@ -28,7 +28,7 @@ export const LONGSHIPCOLUMNS = [
   {
     Header: "Arrival time",
     accessor: "estimated_time_of_arrival",
-    disableFilters: true,
+    disableFilters: false,
     Cell: ({ value }) => {
       return format(new Date(value * 1000), 'dd/MM/yy HH:mm:ss')
     }

@@ -21,7 +21,7 @@ export default function TransportTypeUpdate() {
     location_two: "",
     // bus_station_from: "",
     // bus_station_to: "",
-    long_ship_duration: 0,
+    // long_ship_duration: 0,
     long_ship_price: 0,
     short_ship_price_per_km: 0,
   });
@@ -159,7 +159,7 @@ export default function TransportTypeUpdate() {
           </Col>
         </Form.Group> */}
 
-        <Form.Group as={Row} controlId="formHorizontalLongShipDuration">
+        {/* <Form.Group as={Row} controlId="formHorizontalLongShipDuration">
           <Form.Label column sm={2}>
             Long ship duration
           </Form.Label>
@@ -173,7 +173,7 @@ export default function TransportTypeUpdate() {
               required
             />
           </Col>
-        </Form.Group>
+        </Form.Group> */}
 
         <Form.Group as={Row} controlId="formHorizontalLongShipPrice">
           <Form.Label column sm={2}>
