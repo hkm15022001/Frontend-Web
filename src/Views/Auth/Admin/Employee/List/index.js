@@ -38,7 +38,7 @@ export default function EmployeeList() {
       method: "GET",
     };
 
-    return await fetch("/api/employee/list", requestOptions)
+    return await fetch("/scem-user/api/employee/list", requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -87,9 +87,9 @@ export default function EmployeeList() {
   };
 
   const actionLink = {
-    detailLink: "/employee/detail/",
-    updateLink: "/employee/update/",
-    deleteLink: "/api/employee/delete/",
+    detailLink: "/scem-user/employee/detail/",
+    updateLink: "/scem-user/employee/update/",
+    deleteLink: "/scem-user/api/employee/delete/",
     handleDelete: handleDelete,
   };
 

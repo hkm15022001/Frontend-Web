@@ -10,7 +10,7 @@ const OrderProcessVRP = () => {
   useEffect(() => {
     // Thực hiện fetch API ở đây và cập nhật state
     // Ví dụ sử dụng fetch:
-    fetch('api1/process/data')
+    fetch('/scem-plan/api/process/data')
       .then((response) => response.json())
       .then((data) => {
         setCoordinatesPath(data.coordinates_path);

@@ -51,7 +51,7 @@ const clearNotify = () => {
       credentials: "include",
     };
 
-    fetch(`/api/transport-type/id/${id}`, requestOptions)
+    fetch(`/scem-order/api/transport-type/id/${id}`, requestOptions)
       .then((res) => {
         setIsLoading(false);
         if (res.status !== 200) {
@@ -105,7 +105,7 @@ const clearNotify = () => {
     };
 
     console.log(state)
-    return fetch("/api/transport-type/update/" + id, requestOptions)
+    return fetch("/scem-order/api/transport-type/update/" + id, requestOptions)
     .then((res) => {
       if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");

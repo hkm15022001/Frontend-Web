@@ -40,7 +40,7 @@ export default function CustomerDetail() {
       
     };
 
-    fetch(`/api/customer/id/${id}`, requestOptions)
+    fetch(`/scem-user/api/customer/id/${id}`, requestOptions)
       .then((res) => {
         setIsLoading(false);
         if (res.status !== 200) {

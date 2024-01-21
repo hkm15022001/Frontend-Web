@@ -77,7 +77,7 @@ export default function EmployeeCreate() {
       method: "GET",
     };
 
-    return await fetch("/api/employee/create-form-data", requestOptions)
+    return await fetch("/scem-user/api/employee/create-form-data", requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -141,7 +141,7 @@ export default function EmployeeCreate() {
       body: formData,
     };
 
-    return await fetch("/api/employee/upload/image", requestOptions)
+    return await fetch("/scem-user/api/employee/upload/image", requestOptions)
       .then((res) => {
         if (res.status !== 201) {
           return Promise.reject('Bad request sent to server!');
@@ -176,7 +176,7 @@ export default function EmployeeCreate() {
           body: JSON.stringify(state),
         };
 
-        return fetch("/api/employee/create", requestOptions);
+        return fetch("/scem-user/api/employee/create", requestOptions);
       })
       .then((res) => {
         if (res.status !== 201) {

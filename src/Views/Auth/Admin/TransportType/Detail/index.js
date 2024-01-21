@@ -43,7 +43,7 @@ export default function TransportTypeDetail() {
       credentials: "include",
     };
 
-    fetch(`/api/transport-type/id/${id}`, requestOptions)
+    fetch(`/scem-order/api/transport-type/id/${id}`, requestOptions)
       .then((res) => {
         setIsLoading(false);
         if (res.status !== 200) {

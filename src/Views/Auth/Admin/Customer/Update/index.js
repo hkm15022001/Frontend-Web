@@ -54,7 +54,7 @@ export default function CustomerUpdate() {
       method: "GET",
     };
 
-    fetch(`/api/customer/id/${id}`, requestOptions)
+    fetch(`/scem-user/api/customer/id/${id}`, requestOptions)
       .then((res) => {
         setIsLoading(false);
         if (res.status !== 200) {
