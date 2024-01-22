@@ -2,7 +2,7 @@ export const COLUMNS = [
   {
     Header: "ID",
     accessor: "id",
-    disableFilters: false,
+    disableFilters: true,
   },
   {
     Header: 'Customer info',
@@ -25,12 +25,12 @@ export const COLUMNS = [
       {
         Header: "Sender",
         accessor: "sender",
-        disableFilters: false,
+        disableFilters: true,
       },
       {
         Header: "Receiver",
         accessor: "receiver",
-        disableFilters: false,
+        disableFilters: true,
       },
     ]
   },
