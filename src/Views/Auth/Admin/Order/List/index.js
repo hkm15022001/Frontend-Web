@@ -34,7 +34,7 @@ export default function OrderList() {
       method: "GET",
     };
 
-    return await fetch("/scem-order/api/order/list", requestOptions)
+    return await fetch("/api/order/list", requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -83,7 +83,7 @@ export default function OrderList() {
   const actionLink = {
     detailLink: "/order/detail/",
     updateLink: "/order/update/",
-    deleteLink: "/scem-order/api/order/delete/",
+    deleteLink: "/api/order/delete/",
     handleDelete,
   };
 

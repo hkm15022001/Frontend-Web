@@ -36,7 +36,7 @@ export default function CustomerCreditList() {
       method: "GET",
     };
 
-    return await fetch("/scem-user/api/customer-credit/list", requestOptions)
+    return await fetch("/api/customer-credit/list", requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -76,7 +76,7 @@ export default function CustomerCreditList() {
       body: formData,
     };
 
-    fetch("/scem-user/api/customer-credit/update/balance/" + customerCreditModal.id, requestOptions)
+    fetch("/api/customer-credit/update/balance/" + customerCreditModal.id, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");

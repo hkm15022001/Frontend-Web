@@ -109,7 +109,7 @@ export default function OrderShortShipUpdate() {
 
     };
 
-    return await fetch(`/scem-ship/scem-ship/api/order-short-ship/id/${id}`, requestOptions)
+    return await fetch(`/api/order-short-ship/id/${id}`, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -180,7 +180,7 @@ export default function OrderShortShipUpdate() {
       body: formData,
     };
 
-    return await fetch("/scem-ship/api/order-short-ship/update/shipper-confirmed/" + id, requestOptions)
+    return await fetch("/api/order-short-ship/update/shipper-confirmed/" + id, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -261,19 +261,19 @@ export default function OrderShortShipUpdate() {
           <Form.Group as={Row} controlId="buttongroup">
           <Form.Label column sm={2}>Test API</Form.Label>
           <Col sm={10}>
-            <Button className="longship-update-button" onClick={() => handleTestAPI("/scem-ship/api/order-short-ship/update/shipper-called/")}>
+            <Button className="longship-update-button" onClick={() => handleTestAPI("/api/order-short-ship/update/shipper-called/")}>
               SP Called
             </Button>
-            <Button className="longship-update-button" onClick={() => handleTestAPI("/scem-ship/api/order-short-ship/update/shipper-received-money/")}>
+            <Button className="longship-update-button" onClick={() => handleTestAPI("/api/order-short-ship/update/shipper-received-money/")}>
               SP Received $
             </Button>
-            <Button className="longship-update-button" onClick={() => handleTestAPI("/scem-ship/api/order-short-ship/update/shipper-shipped/")}>
+            <Button className="longship-update-button" onClick={() => handleTestAPI("/api/order-short-ship/update/shipper-shipped/")}>
               SP Shipped
             </Button>  
             <Button className="longship-update-button" type="submit">
               SP Confirmed
             </Button>
-            <Button className="longship-update-button" onClick={() => handleTestCancelAPI("/scem-ship/api/order-short-ship/update/cancel-order/")}>
+            <Button className="longship-update-button" onClick={() => handleTestCancelAPI("/api/order-short-ship/update/cancel-order/")}>
               Canceled
             </Button>
           </Col>

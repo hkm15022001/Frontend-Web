@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 export default function CustomerCard(props) {
-  let updateLink = "/scem-user/customer/update/" + props.customer.id;
-  let deleteLinkAPI = "/scem-user/api/customer/delete/" + props.customer.id;
+  let updateLink = "/customer/update/" + props.customer.id;
+  let deleteLinkAPI = "/api/customer/delete/" + props.customer.id;
   return (
     <div>
       <p>ID: {props.customer.id}</p>

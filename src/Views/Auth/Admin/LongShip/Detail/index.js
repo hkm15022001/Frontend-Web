@@ -73,7 +73,7 @@ export default function LongShipDetail() {
       
     };
 
-    fetch(`/scem-ship/api/long-ship/id/${id}`, requestOptions)
+    fetch(`/api/long-ship/id/${id}`, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");

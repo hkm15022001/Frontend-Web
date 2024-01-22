@@ -37,7 +37,7 @@ export default function LocationList() {
       method: "GET",
     };
 
-    return await fetch("/scem-user/api/delivery-location/list", requestOptions
+    return await fetch("/api/delivery-location/list", requestOptions
     )
       .then((res) => {
         if (res.status !== 200) {
@@ -93,7 +93,7 @@ export default function LocationList() {
     };
 
 
-    fetch("/scem-user/api/delivery-location/delete/" + id, requestOptions)
+    fetch("/api/delivery-location/delete/" + id, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -122,7 +122,7 @@ export default function LocationList() {
       body: JSON.stringify(locationModal),
     };
 
-    fetch("/scem-user/api/delivery-location/create", requestOptions)
+    fetch("/api/delivery-location/create", requestOptions)
       .then((res) => {
         if (res.status !== 201) {
           return Promise.reject("Bad request sent to server!");
@@ -151,7 +151,7 @@ export default function LocationList() {
       body: JSON.stringify(locationModal),
     };
 
-    fetch("/scem-user/api/delivery-location/update/" + locationModal.id, requestOptions)
+    fetch("/api/delivery-location/update/" + locationModal.id, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");

@@ -33,7 +33,7 @@ export default function CustomerList() {
       method: "GET",
     };
 
-    return await fetch("/scem-user/api/customer/list", requestOptions)
+    return await fetch("/api/customer/list", requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -78,9 +78,9 @@ export default function CustomerList() {
   };
 
   const actionLink = {
-    detailLink: "/scem-user/customer/detail/",
-    updateLink: "/scem-user/customer/update/",
-    deleteLink: "/scem-user/api/customer/delete/",
+    detailLink: "/customer/detail/",
+    updateLink: "/customer/update/",
+    deleteLink: "/api/customer/delete/",
     handleDelete: handleDelete,
   };
 

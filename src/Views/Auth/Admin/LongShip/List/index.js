@@ -40,7 +40,7 @@ export default function LongShipList() {
       credentials: "include",
       method: "GET",
     };
-    const newURL = URLString || "/scem-ship/api/long-ship/list";
+    const newURL = URLString || "/api/long-ship/list";
     return await fetch(newURL, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
@@ -93,9 +93,9 @@ export default function LongShipList() {
   };
 
   const actionLink = {
-    detailLink: "/scem-ship/long-ship/detail/",
-    updateLink: "/scem-ship/long-ship/update/",
-    deleteLink: "/scem-ship/api/long-ship/delete/",
+    detailLink: "/long-ship/detail/",
+    updateLink: "/long-ship/update/",
+    deleteLink: "/api/long-ship/delete/",
     handleDelete,
   };
 
@@ -114,7 +114,7 @@ export default function LongShipList() {
           <Card border="info" style={{ width: '10rem', margin: '1rem' }}>
             <Card.Header>Available (wait)</Card.Header>
             <Card.Body>
-              <Card.Link href="#" onClick={() => fetchLongShipList("/scem-ship/api/long-ship/list?sortByCondition=available")}>{availableTotal} long ship(s).</Card.Link>
+              <Card.Link href="#" onClick={() => fetchLongShipList("/api/long-ship/list?sortByCondition=available")}>{availableTotal} long ship(s).</Card.Link>
             </Card.Body>
           </Card>
         </Col>
@@ -122,7 +122,7 @@ export default function LongShipList() {
           <Card border="info" style={{ width: '10rem', margin: '1rem' }}>
             <Card.Header>Ready to run</Card.Header>
             <Card.Body>
-              <Card.Link href="#" onClick={() => fetchLongShipList("/scem-ship/api/long-ship/list?sortByCondition=ready")}>{readyTotal} long ship(s).</Card.Link>
+              <Card.Link href="#" onClick={() => fetchLongShipList("/api/long-ship/list?sortByCondition=ready")}>{readyTotal} long ship(s).</Card.Link>
             </Card.Body>
           </Card>
         </Col>
@@ -130,7 +130,7 @@ export default function LongShipList() {
           <Card border="success" style={{ width: '10rem', margin: '1rem' }}>
             <Card.Header>Running</Card.Header>
             <Card.Body>
-              <Card.Link href="#" onClick={() => fetchLongShipList("/scem-ship/api/long-ship/list?sortByCondition=running")}>{runningTotal} long ship(s).</Card.Link>
+              <Card.Link href="#" onClick={() => fetchLongShipList("/api/long-ship/list?sortByCondition=running")}>{runningTotal} long ship(s).</Card.Link>
             </Card.Body>
           </Card>
         </Col>
@@ -138,7 +138,7 @@ export default function LongShipList() {
           <Card border="dark" style={{ width: '10rem', margin: '1rem' }}>
             <Card.Header>Finished</Card.Header>
             <Card.Body>
-            <Card.Link href="#" onClick={() => fetchLongShipList("/scem-ship/api/long-ship/list?sortByCondition=finished")}> {finishedTotal} long ship(s).</Card.Link>
+            <Card.Link href="#" onClick={() => fetchLongShipList("/api/long-ship/list?sortByCondition=finished")}> {finishedTotal} long ship(s).</Card.Link>
             </Card.Body>
           </Card>
         </Col>
