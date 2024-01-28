@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  my-react-app:
+    image: scem_web:v1
+    ports:
+      - "1503:80"
+    environment:
+      - REACT_APP_API_USER_IMAGE_URL=scem-user/api/images/
+      - REACT_APP_API_ORDER_IMAGE_URL=scem-order/api/images/
+      - REACT_APP_API_QRCODE_URL=/scem-ship/api/qrcode/
