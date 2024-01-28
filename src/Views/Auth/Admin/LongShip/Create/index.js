@@ -53,7 +53,7 @@ export default function LongShipCreate() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
 
@@ -123,7 +123,7 @@ export default function LongShipCreate() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "POST",
       body: JSON.stringify(state),
     };

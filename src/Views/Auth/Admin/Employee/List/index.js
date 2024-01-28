@@ -34,7 +34,7 @@ export default function EmployeeList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
 
@@ -64,7 +64,7 @@ export default function EmployeeList() {
         Accept: "application/json",
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "DELETE",
     };
 
@@ -87,9 +87,9 @@ export default function EmployeeList() {
   };
 
   const actionLink = {
-    detailLink: "/scem-user/employee/detail/",
-    updateLink: "/scem-user/employee/update/",
-    deleteLink: "/scem-user/api/employee/delete/",
+    detailLink: "/employee/detail/",
+    updateLink: "/employee/update/",
+    deleteLink: "/employee/delete/",
     handleDelete: handleDelete,
   };
 

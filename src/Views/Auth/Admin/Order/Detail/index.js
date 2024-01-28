@@ -57,7 +57,7 @@ export default function TransportTypeDetail() {
         "X-CSRF-Token": cookies.csrf,
         Accept: "application/json",
       },
-      credentials: "include",
+      // credentials: "include",
     };
 
     fetch(`/scem-order/api/order/id/${id}`, requestOptions)
@@ -90,7 +90,7 @@ export default function TransportTypeDetail() {
               Image
             </Form.Label>
             <Col sm={10}>
-              <Image className="employee-avatar" src={process.env.REACT_APP_API_IMAGE_URL + "/" + image} />
+              <Image className="employee-avatar" src={process.env.REACT_APP_API_ORDER_IMAGE_URL + "/" + image} />
             </Col>
           </Form.Group>
 

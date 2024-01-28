@@ -36,7 +36,7 @@ export default function CustomerDetail() {
         "X-CSRF-Token": cookies.csrf,
         Accept: "application/json",
       },
-      credentials: "include",
+      // credentials: "include",
       
     };
 

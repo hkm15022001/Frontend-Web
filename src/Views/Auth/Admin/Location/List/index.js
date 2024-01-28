@@ -33,7 +33,7 @@ export default function LocationList() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
 
@@ -88,7 +88,7 @@ export default function LocationList() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "DELETE",
     };
 
@@ -117,7 +117,7 @@ export default function LocationList() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "POST",
       body: JSON.stringify(locationModal),
     };
@@ -146,7 +146,7 @@ export default function LocationList() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "PUT",
       body: JSON.stringify(locationModal),
     };

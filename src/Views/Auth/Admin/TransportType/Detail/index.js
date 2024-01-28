@@ -40,7 +40,7 @@ export default function TransportTypeDetail() {
         "X-CSRF-Token": cookies.csrf,
         Accept: "application/json",
       },
-      credentials: "include",
+      // credentials: "include",
     };
 
     fetch(`/scem-order/api/transport-type/id/${id}`, requestOptions)

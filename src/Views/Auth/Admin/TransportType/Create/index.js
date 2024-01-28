@@ -80,7 +80,7 @@ export default function TransportTypeCreate() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "POST",
       body: JSON.stringify(state),
     };

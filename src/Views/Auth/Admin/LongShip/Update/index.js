@@ -82,7 +82,7 @@ export default function LongShipUpdate() {
         "X-CSRF-Token": cookies.csrf,
         Accept: "application/json",
       },
-      credentials: "include",
+      // credentials: "include",
 
     };
 
@@ -113,7 +113,7 @@ export default function LongShipUpdate() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "PUT",
       body: JSON.stringify(state),
     };
@@ -166,7 +166,7 @@ export default function LongShipUpdate() {
           <Form.Group as={Row} controlId="formHorizontalID1">
             <Form.Label column sm={2}>QR Code</Form.Label>
             <Col sm={10}>
-              <Image className="qr-code" src={process.env.REACT_APP_API_ORCODE_URL + ls_qr_code} />
+              <Image className="qr-code" src={process.env.REACT_APP_API_QRCODE_URL + ls_qr_code} />
             </Col>
           </Form.Group>
 

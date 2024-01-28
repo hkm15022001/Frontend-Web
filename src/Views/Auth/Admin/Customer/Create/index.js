@@ -53,7 +53,7 @@ export default function CustomerCreate() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "POST",
       body: JSON.stringify(state),
     };

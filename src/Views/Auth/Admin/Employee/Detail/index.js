@@ -44,7 +44,7 @@ export default function EmployeeDetail() {
         "X-CSRF-Token": cookies.csrf,
         Accept: "application/json",
       },
-      credentials: "include",
+      // credentials: "include",
       
     };
 
@@ -77,7 +77,7 @@ export default function EmployeeDetail() {
               Avatar
             </Form.Label>
             <Col sm={10}>
-              <Image className="employee-avatar" src={process.env.REACT_APP_API_IMAGE_URL + "/" + avatar} rounded />
+              <Image className="employee-avatar" src={"https://api.innoway.vn/" + process.env.REACT_APP_API_USER_IMAGE_URL + "/" + avatar} rounded />
             </Col>
           </Form.Group>
 

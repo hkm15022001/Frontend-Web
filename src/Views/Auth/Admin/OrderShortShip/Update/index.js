@@ -105,11 +105,11 @@ export default function OrderShortShipUpdate() {
         "X-CSRF-Token": cookies.csrf,
         Accept: "application/json",
       },
-      credentials: "include",
+      // credentials: "include",
 
     };
 
-    return await fetch(`/scem-ship/scem-ship/api/order-short-ship/id/${id}`, requestOptions)
+    return await fetch(`/scem-ship/api/order-short-ship/id/${id}`, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -136,7 +136,7 @@ export default function OrderShortShipUpdate() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "PUT",
       body: JSON.stringify(state),
     };
@@ -175,7 +175,7 @@ export default function OrderShortShipUpdate() {
         Accept: "application/json",
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "PUT",
       body: formData,
     };
@@ -206,7 +206,7 @@ export default function OrderShortShipUpdate() {
         Accept: "application/json",
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "PUT",
       body: formData,
     };
@@ -284,7 +284,7 @@ export default function OrderShortShipUpdate() {
           <Form.Group as={Row} controlId="formHorizontalID1">
             <Form.Label column sm={2}>OSS QR Code</Form.Label>
             <Col sm={10}>
-              <Image className="qr-code" src={process.env.REACT_APP_API_ORCODE_URL + "/" + oss_qr_code} />
+              <Image className="qr-code" src={process.env.REACT_APP_API_QRCODE_URL + "/" + oss_qr_code} />
             </Col>
           </Form.Group>
 
@@ -392,7 +392,7 @@ export default function OrderShortShipUpdate() {
               Shipper Confirmed
             </Form.Label>
             <Col sm={10}>
-              <Image className="employee-avatar" src={process.env.REACT_APP_API_IMAGE_URL + shipper_confirmed} />
+              <Image className="employee-avatar" src={process.env.REACT_APP_API_ORDER_IMAGE_URL + shipper_confirmed} />
             </Col>
           </Form.Group>
 

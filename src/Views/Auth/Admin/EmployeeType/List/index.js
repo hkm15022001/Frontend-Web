@@ -33,7 +33,7 @@ export default function EmployeeTypeList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
 
@@ -87,7 +87,7 @@ export default function EmployeeTypeList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "DELETE",
     };
 
@@ -116,7 +116,7 @@ export default function EmployeeTypeList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "POST",
       body: JSON.stringify(EmployeeTypeModal),
     };
@@ -145,7 +145,7 @@ export default function EmployeeTypeList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "PUT",
       body: JSON.stringify(EmployeeTypeModal),
     };

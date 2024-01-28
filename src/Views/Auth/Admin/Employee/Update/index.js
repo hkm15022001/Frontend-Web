@@ -70,7 +70,7 @@ export default function EmployeeUpdate() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
 
@@ -148,7 +148,7 @@ export default function EmployeeUpdate() {
           Accept: "application/json",
         },
 
-        credentials: "include",
+        // credentials: "include",
         method: "POST",
         body: formData,
       };
@@ -187,7 +187,7 @@ export default function EmployeeUpdate() {
             "X-CSRF-Token": cookies.csrf,
           },
 
-          credentials: "include",
+          // credentials: "include",
           method: "PUT",
           body: JSON.stringify(state),
         };

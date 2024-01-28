@@ -50,7 +50,7 @@ export default function CustomerUpdate() {
         Accept: "application/json",
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
 
@@ -83,7 +83,7 @@ export default function CustomerUpdate() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "PUT",
       body: JSON.stringify(state),
     };

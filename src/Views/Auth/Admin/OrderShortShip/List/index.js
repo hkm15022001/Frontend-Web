@@ -27,7 +27,7 @@ export default function OrderShortShipList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
 

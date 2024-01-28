@@ -29,7 +29,7 @@ export default function TransportTypeList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
 
@@ -56,7 +56,7 @@ export default function TransportTypeList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "DELETE",
     };
 
@@ -81,7 +81,7 @@ export default function TransportTypeList() {
   const actionLink = {
     detailLink: "/transport-type/detail/",
     updateLink: "/transport-type/update/",
-    deleteLink: "/scem-order/api/transport-type/delete/",
+    deleteLink: "/transport-type/delete/",
     handleDelete,
   };
 

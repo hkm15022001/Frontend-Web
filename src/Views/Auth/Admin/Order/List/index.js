@@ -30,7 +30,7 @@ export default function OrderList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
 
@@ -58,7 +58,7 @@ export default function OrderList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "DELETE",
     };
 
@@ -83,7 +83,7 @@ export default function OrderList() {
   const actionLink = {
     detailLink: "/order/detail/",
     updateLink: "/order/update/",
-    deleteLink: "/scem-order/api/order/delete/",
+    deleteLink: "/order/delete/",
     handleDelete,
   };
 

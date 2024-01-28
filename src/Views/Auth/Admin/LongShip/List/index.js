@@ -37,7 +37,7 @@ export default function LongShipList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
     const newURL = URLString || "/scem-ship/api/long-ship/list";
@@ -70,7 +70,7 @@ export default function LongShipList() {
         Accept: "application/json",
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "DELETE",
     };
 
@@ -93,9 +93,9 @@ export default function LongShipList() {
   };
 
   const actionLink = {
-    detailLink: "/scem-ship/long-ship/detail/",
-    updateLink: "/scem-ship/long-ship/update/",
-    deleteLink: "/scem-ship/api/long-ship/delete/",
+    detailLink: "/long-ship/detail/",
+    updateLink: "/long-ship/update/",
+    deleteLink: "/long-ship/delete/",
     handleDelete,
   };
 

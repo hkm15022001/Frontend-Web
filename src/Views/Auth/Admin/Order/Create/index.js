@@ -49,7 +49,7 @@ export default function OrderCreate() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
 
@@ -140,7 +140,7 @@ export default function OrderCreate() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "POST",
       body: JSON.stringify(state),
     };
@@ -193,7 +193,7 @@ export default function OrderCreate() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "POST",
       body: JSON.stringify({ order_id: orderCreatedID }),
     };
@@ -223,7 +223,7 @@ export default function OrderCreate() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "POST",
       body: JSON.stringify({ order_id: orderCreatedID, pay_method: method }),
     };
@@ -252,7 +252,7 @@ export default function OrderCreate() {
         "X-CSRF-Token": cookies.csrf,
       },
 
-      credentials: "include",
+      // credentials: "include",
       method: "PUT",
       body: JSON.stringify({ order_id: orderCreatedID }),
     };

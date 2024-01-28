@@ -29,7 +29,7 @@ export default function CustomerList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
 
@@ -55,7 +55,7 @@ export default function CustomerList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "DELETE",
     };
 
@@ -78,9 +78,9 @@ export default function CustomerList() {
   };
 
   const actionLink = {
-    detailLink: "/scem-user/customer/detail/",
-    updateLink: "/scem-user/customer/update/",
-    deleteLink: "/scem-user/api/customer/delete/",
+    detailLink: "/customer/detail/",
+    updateLink: "/customer/update/",
+    deleteLink: "/api/customer/delete/",
     handleDelete: handleDelete,
   };
 

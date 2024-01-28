@@ -32,7 +32,7 @@ export default function CustomerCreditList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "GET",
     };
 
@@ -71,7 +71,7 @@ export default function CustomerCreditList() {
         "X-CSRF-Token": cookies.csrf,
       },
       
-      credentials: "include",
+      // credentials: "include",
       method: "PUT",
       body: formData,
     };
