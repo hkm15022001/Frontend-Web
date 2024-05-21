@@ -53,7 +53,7 @@ export default function OrderCreate() {
       method: "GET",
     };
 
-    return await fetch("/scem-order/api/order/create-form-data", requestOptions)
+    return await fetch("/api/order/create-form-data", requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -145,7 +145,7 @@ export default function OrderCreate() {
       body: JSON.stringify(state),
     };
 
-    return fetch("/scem-order/api/order/create", requestOptions)
+    return fetch("/api/order/create", requestOptions)
       .then((res) => {
         if (res.status !== 201) {
           return Promise.reject('Bad request sent to server!');
@@ -199,7 +199,7 @@ export default function OrderCreate() {
     };
 
 
-    return await fetch("/scem-order/api/order-pay/create-step-one", requestOptions)
+    return await fetch("/api/order-pay/create-step-one", requestOptions)
       .then((res) => {
         if (res.status !== 201) {
           return Promise.reject("Bad request sent to server!");
@@ -229,7 +229,7 @@ export default function OrderCreate() {
     };
 
 
-    return await fetch("/scem-order/api/order-pay/create-step-two", requestOptions)
+    return await fetch("/api/order-pay/create-step-two", requestOptions)
       .then((res) => {
         if (res.status !== 201) {
           return Promise.reject("Bad request sent to server!");
@@ -257,7 +257,7 @@ export default function OrderCreate() {
       body: JSON.stringify({ order_id: orderCreatedID }),
     };
 
-    return await fetch("/scem-order/api/order-pay/update-payment-confirm/orderid/" + orderCreatedID, requestOptions)
+    return await fetch("/api/order-pay/update-payment-confirm/orderid/" + orderCreatedID, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");

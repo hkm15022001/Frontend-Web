@@ -73,7 +73,7 @@ export default function Zeebe() {
         <Form.Group as={Row} controlId="buttongroup">
           <Form.Label column sm={2}>Test Deploy API</Form.Label>
           <Col sm={10}>
-            <Button className="longship-update-button" onClick={() => handleTestAPI("/scem-ship/api/state-service/zeebe/full-ship-workflow/deploy")}>
+            <Button className="longship-update-button" onClick={() => handleTestAPI("/api/state-service/zeebe/full-ship-workflow/deploy")}>
               Deploy Workflow
             </Button>
           </Col>
@@ -83,13 +83,13 @@ export default function Zeebe() {
         <Form.Group as={Row} controlId="buttongroup">
           <Form.Label column sm={2}>Create Instance API</Form.Label>
           <Col sm={10}>
-            <Button className="longship-update-button" onClick={() => handleTestAPI("/scem-ship/api/state-service/zeebe/full-ship-workflow/create-instance")}>
+            <Button className="longship-update-button" onClick={() => handleTestAPI("/api/state-service/zeebe/full-ship-workflow/create-instance")}>
               Good
             </Button>
-            <Button className="longship-update-button" onClick={() => handleTestAPI("/scem-ship/api/state-service/zeebe/full-ship-workflow/create-instance-internal-bug")}>
+            <Button className="longship-update-button" onClick={() => handleTestAPI("/api/state-service/zeebe/full-ship-workflow/create-instance-internal-bug")}>
               Internal Server Bug
             </Button>
-            <Button className="longship-update-button" onClick={() => handleTestAPI("/scem-ship/api/state-service/zeebe/full-ship-workflow/create-instance-missing-param-bug")}>
+            <Button className="longship-update-button" onClick={() => handleTestAPI("/api/state-service/zeebe/full-ship-workflow/create-instance-missing-param-bug")}>
               Missing Parameter Bug
             </Button>
           </Col>
@@ -102,7 +102,7 @@ export default function Zeebe() {
         <Form.Group as={Row} controlId="buttongroup">
           <Form.Label column sm={2}>Test API</Form.Label>
           <Col sm={10}>
-            <Button className="longship-update-button" onClick={() => handleTestAPI("/scem-ship/api/state-service/zeebe/long-ship-workflow/deploy")}>
+            <Button className="longship-update-button" onClick={() => handleTestAPI("/api/state-service/zeebe/long-ship-workflow/deploy")}>
               Deploy Workflow
             </Button>
           </Col>

@@ -73,7 +73,7 @@ export default function LongShipDetail() {
       
     };
 
-    fetch(`/scem-ship/api/long-ship/id/${id}`, requestOptions)
+    fetch(`/api/long-ship/id/${id}`, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -100,7 +100,9 @@ export default function LongShipDetail() {
           <Form.Group as={Row} controlId="formHorizontalID1">
             <Form.Label column sm={2}>QR Code</Form.Label>
             <Col sm={10}>
-              <Image className="qr-code" src={"https://api.innoway.vn" + process.env.REACT_APP_API_QRCODE_URL + "/" + ls_qr_code} />
+              {/* <Image className="qr-code" src={"https://api.innoway.vn" + process.env.REACT_APP_API_QRCODE_URL + "/" + ls_qr_code} /> */}
+              <Image className="qr-code" src={process.env.REACT_APP_API_QRCODE_URL + "/" + ls_qr_code} />
+
             </Col>
           </Form.Group>
 

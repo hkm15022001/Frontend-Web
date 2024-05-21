@@ -33,7 +33,7 @@ export default function TransportTypeList() {
       method: "GET",
     };
 
-    return await fetch("/scem-order/api/transport-type/list", requestOptions)
+    return await fetch("/api/transport-type/list", requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");

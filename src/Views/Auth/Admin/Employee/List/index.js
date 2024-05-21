@@ -38,7 +38,7 @@ export default function EmployeeList() {
       method: "GET",
     };
 
-    return await fetch("/scem-user/api/employee/list", requestOptions)
+    return await fetch("/api/employee/list", requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");

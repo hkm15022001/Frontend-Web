@@ -14,17 +14,17 @@ export default function Footer() {
                 <Row>
                     <Col className="md-6 mt-md-0 mt-3">
                         <h5 className="text-uppercase">Project Information</h5>
-                        <p>Graduation Thesis 2023 - Computer Engineering</p>
-                        <p>HaNoi University of science and technology - HUST</p>
+                        <p>Assignment - Your Major</p>
+                        <p>Your School</p>
                     </Col>
                     <hr className="clearfix w-100 d-md-none pb-3" />
                     <Col className="col-md-3 mb-md-0 mb-3">
                         <h5 className="text-uppercase">Student</h5>
-                        <p> Hoàng Kim Minh - 20194326</p>
+                        <p> Yourname - Code</p>
                     </Col>
                     <Col className="md-3 mb-md-0 mb-3">
                         <h5 className="text-uppercase">Lecturer</h5>
-                        <p>Tiến sĩ Tống Văn Vạn</p>
+                        <p>Your Lecturer</p>
                     </Col>
                 </Row>
             </Container>

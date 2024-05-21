@@ -31,7 +31,7 @@ export default function OrderShortShipList() {
       method: "GET",
     };
 
-    return await fetch("/scem-ship/api/order-short-ship/list", requestOptions)
+    return await fetch("/api/order-short-ship/list", requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");

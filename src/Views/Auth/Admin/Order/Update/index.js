@@ -43,7 +43,7 @@ export default function TransportTypeUpdate() {
       // credentials: "include",
     };
 
-    fetch(`/scem-order/api/transport-type/id/${id}`, requestOptions)
+    fetch(`/api/transport-type/id/${id}`, requestOptions)
       .then((res) => {
         setIsLoading(false);
         if (res.status !== 200) {
@@ -96,7 +96,7 @@ export default function TransportTypeUpdate() {
     };
 
     console.log(state)
-    return fetch("/scem-order/api/transport-type/update/" + id, requestOptions)
+    return fetch("/api/transport-type/update/" + id, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject('Bad request sent to server!');

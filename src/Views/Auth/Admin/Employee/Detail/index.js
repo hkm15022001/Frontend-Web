@@ -48,7 +48,7 @@ export default function EmployeeDetail() {
       
     };
 
-    fetch(`/scem-user/api/employee/id/${id}`, requestOptions)
+    fetch(`/api/employee/id/${id}`, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");

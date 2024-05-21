@@ -58,7 +58,7 @@ export default function CustomerCreate() {
       body: JSON.stringify(state),
     };
 
-    return fetch("/scem-user/api/customer/create", requestOptions)
+    return fetch("/api/customer/create", requestOptions)
       .then((res) => {
         if (res.status !== 201) {
           return Promise.reject("Bad request sent to server!");

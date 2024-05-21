@@ -57,7 +57,7 @@ export default function LongShipCreate() {
       method: "GET",
     };
 
-    return await fetch("/scem-ship/api/long-ship/create-form-data", requestOptions)
+    return await fetch("/api/long-ship/create-form-data", requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -128,7 +128,7 @@ export default function LongShipCreate() {
       body: JSON.stringify(state),
     };
 
-    return fetch("/scem-ship/api/long-ship/create", requestOptions)
+    return fetch("/api/long-ship/create", requestOptions)
       .then((res) => {
         if (res.status !== 201) {
           return Promise.reject("Bad request sent to server!");

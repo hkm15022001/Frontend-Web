@@ -64,6 +64,7 @@ export default function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path="/" component={CustomerList} />
         <Route exact path="/customer/list" component={CustomerList} />
         <Route exact path="/customer/detail/:id" component={CustomerDetail} />
         <Route exact path="/customer/create" component={CustomerCreate} />
