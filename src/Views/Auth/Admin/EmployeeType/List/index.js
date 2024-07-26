@@ -37,7 +37,7 @@ export default function EmployeeTypeList() {
       method: "GET",
     };
 
-    return await fetch( "/api/employee-type/list", requestOptions )
+    return await fetch( "/scem-user/api/employee-type/list", requestOptions )
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -92,7 +92,7 @@ export default function EmployeeTypeList() {
     };
 
 
-    fetch("/api/employee-type/delete/" + id, requestOptions)
+    fetch("/scem-user/api/employee-type/delete/" + id, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -121,7 +121,7 @@ export default function EmployeeTypeList() {
       body: JSON.stringify(EmployeeTypeModal),
     };
 
-    fetch("/api/employee-type/create", requestOptions)
+    fetch("/scem-user/api/employee-type/create", requestOptions)
       .then((res) => {
         if (res.status !== 201) {
           return Promise.reject("Bad request sent to server!");
@@ -150,7 +150,7 @@ export default function EmployeeTypeList() {
       body: JSON.stringify(EmployeeTypeModal),
     };
 
-    fetch("/api/employee-type/update/" + EmployeeTypeModal.id, requestOptions)
+    fetch("/scem-user/api/employee-type/update/" + EmployeeTypeModal.id, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");

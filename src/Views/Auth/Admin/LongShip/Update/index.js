@@ -86,7 +86,7 @@ export default function LongShipUpdate() {
 
     };
 
-    fetch(`/api/long-ship/id/${id}`, requestOptions)
+    fetch(`/scem-ship/api/long-ship/id/${id}`, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -147,16 +147,16 @@ export default function LongShipUpdate() {
         <Form.Group as={Row} controlId="buttongroup">
           <Form.Label column sm={2}>Test API</Form.Label>
           <Col sm={10}>
-            <Button className="longship-update-button" onClick={() => handleTestAPI("/api/long-ship/update-load-package/qrcode/")}>
+            <Button className="longship-update-button" onClick={() => handleTestAPI("/scem-ship/api/long-ship/update-load-package/qrcode/")}>
               Package Loaded
             </Button>
-            <Button className="longship-update-button" onClick={() => handleTestAPI("/api/long-ship/update-start-vehicle/qrcode/")}>
+            <Button className="longship-update-button" onClick={() => handleTestAPI("/scem-ship/api/long-ship/update-start-vehicle/qrcode/")}>
               Vehicle Started
             </Button>
-            <Button className="longship-update-button" onClick={() => handleTestAPI("/api/long-ship/update-vehicle-arrived/qrcode/")}>
+            <Button className="longship-update-button" onClick={() => handleTestAPI("/scem-ship/api/long-ship/update-vehicle-arrived/qrcode/")}>
               Vehicle Arrived
             </Button>
-            <Button className="longship-update-button" onClick={() => handleTestAPI("/api/long-ship/update-unload-package/qrcode/")}>
+            <Button className="longship-update-button" onClick={() => handleTestAPI("/scem-ship/api/long-ship/update-unload-package/qrcode/")}>
               Package Unloaded
             </Button>
           </Col>

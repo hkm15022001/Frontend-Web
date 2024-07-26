@@ -74,7 +74,7 @@ export default function EmployeeUpdate() {
       method: "GET",
     };
 
-    await fetch(`/api/employee/update-form-data/${id}`, requestOptions)
+    await fetch(`/scem-user/api/employee/update-form-data/${id}`, requestOptions)
       .then((res) => {
         if (res.status !== 200) {
           return Promise.reject("Bad request sent to server!");
@@ -153,7 +153,7 @@ export default function EmployeeUpdate() {
         body: formData,
       };
 
-      return await fetch("/api/employee/upload/image", requestOptions)
+      return await fetch("/scem-user/api/employee/upload/image", requestOptions)
         .then((res) => {
           if (res.status !== 201) {
             return Promise.reject('Bad request sent to server!');
@@ -192,7 +192,7 @@ export default function EmployeeUpdate() {
           body: JSON.stringify(state),
         };
 
-        return fetch(`/api/employee/update/${id}`, requestOptions);
+        return fetch(`/scem-user/api/employee/update/${id}`, requestOptions);
       })
       .then((res) => {
         if (res.status !== 200) {

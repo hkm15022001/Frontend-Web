@@ -58,7 +58,7 @@ export default function LocationCreate() {
       body: JSON.stringify(state),
     };
 
-    return fetch("/api/delivery-location/create", requestOptions)
+    return fetch("/scem-user/api/delivery-location/create", requestOptions)
       .then((res) => {
         if (res.status !== 201) {
           return Promise.reject("Bad request sent to server!");

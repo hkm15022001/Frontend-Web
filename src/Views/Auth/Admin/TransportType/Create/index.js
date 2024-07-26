@@ -85,7 +85,7 @@ export default function TransportTypeCreate() {
       body: JSON.stringify(state),
     };
 
-    return fetch("/api/transport-type/create", requestOptions)
+    return fetch("/scem-order/api/transport-type/create", requestOptions)
       .then((res) => {
         if (res.status !== 201) {
           return Promise.reject("Bad request sent to server!");

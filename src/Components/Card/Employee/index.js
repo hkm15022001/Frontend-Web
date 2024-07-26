@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 export default function EmployeeCard(props) {
-  let detailLink = "/employee/detail/" + props.employee.id;
-  let updateLink = "/employee/update/" + props.employee.id;
-  let deleteLinkAPI = "/api/employee/delete/" + props.employee.id;
+  let detailLink = "/scem-user/employee/detail/" + props.employee.id;
+  let updateLink = "/scem-user/employee/update/" + props.employee.id;
+  let deleteLinkAPI = "/scem-user/api/employee/delete/" + props.employee.id;
   return (
     <div>
       <p>ID: {props.employee.id}</p>
