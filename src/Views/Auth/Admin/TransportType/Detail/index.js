@@ -19,8 +19,8 @@ export default function TransportTypeDetail() {
     same_city: false,
     location_one: "",
     location_two: "",
-    // bus_station_from: "",
-    // bus_station_to: "",
+    bus_station_from: "",
+    bus_station_to: "",
     long_ship_duration: 0,
     long_ship_price: 0,
     short_ship_price_per_km: 0,
@@ -28,8 +28,8 @@ export default function TransportTypeDetail() {
   const same_city = state.same_city;
   const location_one = state.location_one;
   const location_two = state.location_two;
-  // const bus_station_from = state.bus_station_from;
-  // const bus_station_to = state.bus_station_to;
+  const bus_station_from = state.bus_station_from;
+  const bus_station_to = state.bus_station_to;
   const long_ship_duration = state.long_ship_duration;
   const long_ship_price = state.long_ship_price;
   const short_ship_price_per_km = state.short_ship_price_per_km;
@@ -103,23 +103,23 @@ export default function TransportTypeDetail() {
             </Col>
           </Form.Group>
 
-          {/* <Form.Group as={Row} controlId="formHorizontalAddress">
+          <Form.Group as={Row} controlId="formHorizontalAddress">
             <Form.Label column sm={2}>
               Bus station from
             </Form.Label>
             <Col sm={10}>
               <Form.Control type="text" value={bus_station_from} disabled={true} />
             </Col>
-          </Form.Group> */}
+          </Form.Group>
 
-          {/* <Form.Group as={Row} controlId="formHorizontalPoint">
+          <Form.Group as={Row} controlId="formHorizontalPoint">
             <Form.Label column sm={2}>
               Bus station to
             </Form.Label>
             <Col sm={10}>
               <Form.Control type="text" value={bus_station_to} disabled={true} />
             </Col>
-          </Form.Group> */}
+          </Form.Group>
 
           <Form.Group as={Row} controlId="formHorizontalPoint">
             <Form.Label column sm={2}>
@@ -132,7 +132,7 @@ export default function TransportTypeDetail() {
 
           <Form.Group as={Row} controlId="formHorizontalPoint">
             <Form.Label column sm={2}>
-              Long ship price per km
+              Long ship price
             </Form.Label>
             <Col sm={10}>
               <Form.Control type="text" value={long_ship_price} disabled={true} />
